@@ -96,6 +96,16 @@ class ApiManager {
     \Drupal::logger('fogbugz_api')->notice('Invalidated token: ' . $this->fbToken);
   }
 
+
+  /**
+   * Return the FogBugz config object.
+   *
+   * @return \Drupal\Core\Config\ImmutableConfig
+   */
+  public function getConfig() {
+    return $this->fbConfig;
+  }
+
   /**
    * FogBugz API: Get the token string from endpoint.
    *

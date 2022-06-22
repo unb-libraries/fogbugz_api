@@ -1,0 +1,17 @@
+services:
+  fogbugz_api.config_settings:
+    class: Drupal\Core\Config\ImmutableConfig
+    factory: [ '@config.factory', 'get' ]
+    arguments:
+      - 'fogbugz_api.settings'
+    public: false
+  fogbugz_api.key:
+    class: Drupal\key\Entity\Key
+    factory: [ '@key.repository', 'getKey' ]
+    arguments: [ 'fogbugz_api' ]
+    public: false
+  fogbugz_api.manager:
+    class: Drupal\fogbugz_api\FogBugz\ApiManager
+    arguments:
+      - '@fogbugz_api.config_settings'
+      - '@fogbugz_api.key'

@@ -1,0 +1,7 @@
+fogbugz_api.settings_form:
+  path: '/admin/config/fogbugz_api/settings'
+  defaults:
+    _title: 'FogBugz Settings'
+    _form: '\Drupal\fogbugz_api\Form\SettingsForm'
+  requirements:
+    _permission: 'administer fogbugz settings'

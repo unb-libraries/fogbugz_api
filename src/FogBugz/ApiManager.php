@@ -154,6 +154,7 @@ class ApiManager {
    */
   protected function invalidateToken() {
     $this->sendRequest('logoff', []);
+    $this->fbToken = NULL;
   }
 
   /**

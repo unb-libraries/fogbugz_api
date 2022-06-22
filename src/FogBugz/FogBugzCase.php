@@ -176,19 +176,23 @@ class FogBugzCase {
     $instance->setCustomFields($custom);
 
     $events = [];
-    foreach ($xml->events->children() as $event) {
-      $events[] = [
-        'date' => new \DateTime($event->dt),
-        'action' => (string) $event->sVerb,
-        'summary' => (string) $event->sHtml,
-        'changes' => (string) $event->sChanges,
-      ];
+    if (!empty($xml->events)) {
+      foreach ($xml->events->children() as $event) {
+        $events[] = [
+          'date' => new \DateTime($event->dt),
+          'action' => (string) $event->sVerb,
+          'summary' => (string) $event->sHtml,
+          'changes' => (string) $event->sChanges,
+        ];
+      }
     }
     $instance->setEvents($events);
 
     $tags = [];
-    foreach ($xml->tags->children() as $tag) {
-      $tags[] = (string) $tag;
+    if (!empty($xml->tags)) {
+      foreach ($xml->tags->children() as $tag) {
+        $tags[] = (string) $tag;
+      }
     }
     $instance->setTags($tags);
 

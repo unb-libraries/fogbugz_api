@@ -167,7 +167,7 @@ class ApiManager {
    *   The Case object if case creation was successful, FALSE otherwise.
    */
   public function createCase(array $params) {
-    $xml == $this->sendRequest('new', $params);
+    $xml = $this->sendRequest('new', $params);
 
     if ($xml === FALSE) {
       return FALSE;
@@ -195,7 +195,7 @@ class ApiManager {
    *   TRUE if successful, FALSE otherwise.
    */
   public function addForwardEvent(array $params) {
-    $xml == $this->sendRequest('forward', $params);
+    $xml = $this->sendRequest('forward', $params);
 
     if ($xml === FALSE) {
       return FALSE;

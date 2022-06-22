@@ -173,16 +173,13 @@ class ApiManager {
       return FALSE;
     }
 
-    $cases = [];
-    foreach ($xml->cases->children() as $case) {
-      $cases[] = FogBugzCase::createFromXml($case);
-    }
+    $case = FogBugzCase::createFromXml($xml->case);
 
-    if(empty($cases) || empty($cases[0]->getCaseId())) {
+    if(empty($case->getCaseId())) {
       return FALSE;
     }
 
-    return $cases[0];
+    return $case;
   }
 
   /**

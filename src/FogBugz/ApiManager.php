@@ -39,7 +39,7 @@ class ApiManager {
    *
    * @var string
    */
-  public $fbToken;
+  protected $fbToken;
 
   /**
    * HTTP Client.

@@ -584,7 +584,8 @@ class FogBugzCase {
     $events = [];
     foreach ($this->getEvents() as $event) {
       $isCorrespondentChange = !!preg_match('/Correspondent changed from/', $event['changes']);
-      if (in_array($event['action'], $filter) && !$isCorrespondentChange) {
+      $isCommit = !!preg_match('/^Commit Pushed/', $event['summary']);
+      if (in_array($event['action'], $filter) && !$isCorrespondentChange && !$isCommit) {
         $events[] = $event;
       }
     }

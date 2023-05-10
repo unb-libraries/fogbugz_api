@@ -309,7 +309,14 @@ class ApiManager {
       return FALSE;
     }
 
-    $xml = new \SimpleXMLElement((string) $response->getBody(), LIBXML_NOCDATA);
+    try {
+      $xml = new \SimpleXMLElement((string) $response->getBody(), LIBXML_NOCDATA);
+    }
+    catch (\Exception $e) {
+      \Drupal::logger('fogbugz_api')->notice('Failed to Parse XML: ' . $e->getMessage());
+      return FALSE;
+    }
+
     return $xml;
   }
 

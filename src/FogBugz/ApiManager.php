@@ -338,7 +338,7 @@ class ApiManager {
       's' => ['project', 'category', 'title', 'customerEmail', 'from', 'to', 'CC', 'BCC', 'subject', 'event', 'tags', 'personAssignedTo'],
       'n' => ['filesCount'],
       'f' => ['open'],
-      'dt' => ['opened', 'closed'],
+      'dt' => ['opened', 'closed', 'due'],
     ];
 
     $postData = [];

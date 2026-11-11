@@ -1,7 +1,7 @@
 name: 'FogBugz API'
 type: module
 description: 'A module that integrates FogBugz with Drupal.'
-core_version_requirement: ^9 || ^10
+core_version_requirement: ^10 || ^11
 package: 'UNB Libraries'
 dependencies:
   - key

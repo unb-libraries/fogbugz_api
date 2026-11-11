@@ -60,7 +60,7 @@ class ApiManager {
    *
    * @throws \Exception
    */
-  public function __construct(ImmutableConfig $config, Key $key = NULL) {
+  public function __construct(ImmutableConfig $config, ?Key $key = NULL) {
     $this->httpClient = \Drupal::httpClient();
     $this->fbConfig = $config;
 
@@ -213,7 +213,7 @@ class ApiManager {
    * @return $array
    *   Array of Case objects.
    */
-  public function searchCases(string $query, string $cols = NULL) {
+  public function searchCases(string $query, ?string $cols = NULL) {
     $cols = $cols ?? 'sTitle,fOpen,dtOpened,dtClosed,sStatus,ixProject,sProject,ixCategory,sCategory,ixPriority,sPriority,ixMailbox,sCustomerEmail,events,tags,plugin_customfields_at_fogcreek_com_natureg119,plugin_customfields_at_fogcreek_com_alertxstatusw51d,plugin_customfields_at_fogcreek_com_alertxheaderv51b';
     $params = [
       'q' => $query,

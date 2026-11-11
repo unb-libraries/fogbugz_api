@@ -579,7 +579,7 @@ class FogBugzCase {
    * @return array
    *   Array of events.
    */
-  public function getFilteredEvents(array $filter = NULL) {
+  public function getFilteredEvents(?array $filter = NULL) {
     $filter = $filter ?? ['Edited', 'Resolved', 'Reactivated', 'Closed', 'Reopened'];
     $events = [];
     foreach ($this->getEvents() as $event) {
